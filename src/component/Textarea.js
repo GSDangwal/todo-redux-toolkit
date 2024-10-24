@@ -45,20 +45,50 @@ const Textarea = (props) => {
   };
 
   return (
-    <div className="d-flex justify-content-center" style={{ margin: 20 }}>
-      <div>
-        <input
-          className="form-control"
-          value={text}
-          onChange={(e) => updateText(e.target.value)}
-          placeholder="Enter-Todo"
-          onKeyDown={handleKeyDown}
-        ></input>
-      </div>
-      <div>
-        <button className="btn btn-success" onClick={handleClick}>
-          Save
-        </button>
+    // <div classNameName="d-flex justify-content-center" style={{ margin: 20 }}>
+    //   <div>
+    //     <input
+    //       classNameName="form-control"
+    //       value={text}
+    //       onChange={(e) => updateText(e.target.value)}
+    //       placeholder="Enter-Todo"
+    //       onKeyDown={handleKeyDown}
+    //     ></input>
+    //   </div>
+    //   <div>
+    //     <button classNameName="btn btn-success" onClick={handleClick}>
+    //       Save
+    //     </button>
+    //   </div>
+    // </div>
+    <div className="pb-2">
+      <div className="card">
+        <div className="card-body">
+          <div className="d-flex flex-row align-items-center">
+            <input
+              type="text"
+              className="form-control form-control-lg"
+              id="exampleFormControlInput1"
+              placeholder="Add new..."
+              value={text}
+              onChange={(e) => updateText(e.target.value)}
+            />
+            <a href="#!" data-mdb-tooltip-init title="Set due date">
+              <i className="fas fa-calendar-alt fa-lg me-3"></i>
+            </a>
+            <div>
+              <button
+                type="button"
+                data-mdb-button-init
+                data-mdb-ripple-init
+                className="btn btn-primary"
+                onClick={handleClick}
+              >
+                Add
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
