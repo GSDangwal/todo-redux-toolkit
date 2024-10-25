@@ -12,11 +12,28 @@ const textSlice = createSlice({
     },
     edit(state, action) {
       return state.map((items, i) =>
-        i === action.payload.index ? action.payload.editText : items
+        i === action.payload.index
+          ? {
+              title: action.payload.editText,
+              date: items.date,
+              isCompleted: items.isCompleted,
+            }
+          : items
+      );
+    },
+    isChecked(state, action) {
+      return state.map((items, i) =>
+        i === action.payload.index
+          ? {
+              title: items.title,
+              date: items.date,
+              isCompleted: !items.isCompleted,
+            }
+          : items
       );
     },
   },
 });
 
-export const { add, remove, edit } = textSlice.actions;
+export const { add, remove, edit, isChecked } = textSlice.actions;
 export default textSlice.reducer;

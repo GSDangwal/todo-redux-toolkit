@@ -1,13 +1,15 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { edit, remove } from "../redux/textSlice";
+import { edit, isChecked, remove } from "../redux/textSlice";
 import editIcon from "../images/editIcon.svg?url";
 import trash from "../images/trash.svg?url";
 import info from "../images/info.svg?url";
+import { convertTimestamp } from "../utils/constant";
 
-function DisplayItem({ item, index }) {
+function DisplayTodo({ item, index, isCompleted, date }) {
   const [isEdit, updateEdit] = useState(false);
   const [editText, updateText] = useState(item);
+
   const dispatch = useDispatch();
 
   function handleClick() {
@@ -19,16 +21,13 @@ function DisplayItem({ item, index }) {
     }
   }
 
+  function handleCheckBox() {
+    if (!isCompleted) {
+      dispatch(isChecked({ index }));
+    }
+  }
+
   return isEdit ? (
-    // <div>
-    //   <textarea
-    //     value={editText}
-    //     onChange={(e) => updateText(e.target.value)}
-    //   ></textarea>
-    //   <button className="btn btn-success" onClick={handleClick}>
-    //     Save
-    //   </button>
-    // </div>
     <div className="d-flex flex-row align-items-center">
       <input
         type="text"
@@ -64,7 +63,8 @@ function DisplayItem({ item, index }) {
               value=""
               id="flexCheckChecked1"
               aria-label="..."
-              checked
+              onChange={handleCheckBox}
+              checked={isCompleted}
             />
           </div>
         </li>
@@ -97,7 +97,7 @@ function DisplayItem({ item, index }) {
               className="small mb-0"
             >
               <img className="me-2 inline-block" src={info} alt="" />
-              28th Jun 2020
+              {convertTimestamp(date)}
             </p>
           </div>
         </li>
@@ -106,4 +106,4 @@ function DisplayItem({ item, index }) {
   );
 }
 
-export default DisplayItem;
+export default DisplayTodo;
