@@ -1,4 +1,12 @@
-export const array = [
-  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
-  23, 24, 25, 26, 27, 28, 29, 30,
-];
+export function convertTimestamp(timestamp) {
+  // Convert milliseconds to a Date object
+  let date = new Date(timestamp);
+
+  // Extract day, month, and year
+  let day = String(date.getUTCDate()).padStart(2, "0");
+  let month = String(date.getUTCMonth() + 1).padStart(2, "0"); // Months are 0-based
+  let year = date.getUTCFullYear();
+
+  // Return formatted date as dd:mm:yyyy
+  return `${day}:${month}:${year}`;
+}

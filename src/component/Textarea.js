@@ -26,7 +26,7 @@ const Textarea = (props) => {
 
   const handleClick = () => {
     if (text.length > 0) {
-      dispatch(add(text));
+      dispatch(add({ title: text, date: Date.now(), isCompleted: false }));
       // const getItems = localStorage.getItem("ITEMS");
       // console.log(getItems);
       // if (getItems) {
@@ -37,7 +37,13 @@ const Textarea = (props) => {
       setItems([...items, text]);
 
       // let item = items;
-      localStorage.setItem("ITEMS", JSON.stringify([...items, text]));
+      localStorage.setItem(
+        "ITEMS",
+        JSON.stringify([
+          ...items,
+          { title: text, date: Date.now(), isCompleted: false },
+        ])
+      );
       updateText("");
     } else {
       return null;
@@ -45,22 +51,6 @@ const Textarea = (props) => {
   };
 
   return (
-    // <div classNameName="d-flex justify-content-center" style={{ margin: 20 }}>
-    //   <div>
-    //     <input
-    //       classNameName="form-control"
-    //       value={text}
-    //       onChange={(e) => updateText(e.target.value)}
-    //       placeholder="Enter-Todo"
-    //       onKeyDown={handleKeyDown}
-    //     ></input>
-    //   </div>
-    //   <div>
-    //     <button classNameName="btn btn-success" onClick={handleClick}>
-    //       Save
-    //     </button>
-    //   </div>
-    // </div>
     <div className="pb-2">
       <div className="card">
         <div className="card-body">
