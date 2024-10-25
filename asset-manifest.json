@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/todo-redux-toolkit/static/css/main.307292c5.css",
-    "main.js": "/todo-redux-toolkit/static/js/main.7c6f3f30.js",
+    "main.css": "/todo-redux-toolkit/static/css/main.94deba87.css",
+    "main.js": "/todo-redux-toolkit/static/js/main.6e14057c.js",
     "index.html": "/todo-redux-toolkit/index.html",
     "static/media/trash.svg?url": "/todo-redux-toolkit/static/media/trash.913e68470be93aac6d845f0fb9f01d59.svg",
     "static/media/editIcon.svg?url": "/todo-redux-toolkit/static/media/editIcon.d37eb3f671e71f4bbdfd1075a728833a.svg",
     "static/media/info.svg?url": "/todo-redux-toolkit/static/media/info.9f50ff1338fb1ea6dbbd4aac33746819.svg",
-    "main.307292c5.css.map": "/todo-redux-toolkit/static/css/main.307292c5.css.map",
-    "main.7c6f3f30.js.map": "/todo-redux-toolkit/static/js/main.7c6f3f30.js.map"
+    "main.94deba87.css.map": "/todo-redux-toolkit/static/css/main.94deba87.css.map",
+    "main.6e14057c.js.map": "/todo-redux-toolkit/static/js/main.6e14057c.js.map"
   },
   "entrypoints": [
-    "static/css/main.307292c5.css",
-    "static/js/main.7c6f3f30.js"
+    "static/css/main.94deba87.css",
+    "static/js/main.6e14057c.js"
   ]
 }
