@@ -5,7 +5,7 @@ import DisplayTodo from "./DisplayTodo";
 function Todos() {
   const { todos, filter } = useSelector((state) => state);
   return (
-    <div className="h-[37%]  overflow-scroll ">
+    <div className="">
       {todos.map((item, index) => {
         return filter !== "All" ? (
           item.isCompleted && (

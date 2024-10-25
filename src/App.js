@@ -9,10 +9,13 @@ function App() {
     <div className="App">
       {/* <h1 className='d-flex justify-content-center' style={{ margin: 20, color: "green" }}>Todo-App</h1> */}
       <section className="vh-100">
-        <div className="container py-5 h-100">
+        <div className="container py-5 px-5  ">
           <div className="row d-flex justify-content-center align-items-center h-100">
-            <div className="col h-100 ">
-              <div className=" card rounded-md bg-[#eff1f2] h-100 " id="list1">
+            <div className="col  ">
+              <div
+                className=" card rounded-md bg-[#eff1f2] min-h-[90vh]"
+                id="list1"
+              >
                 <div className="card-body py-4 px-4 px-md-5">
                   <p className="h1 text-center mt-3 mb-4 pb-3 text-primary">
                     <i className="fas fa-check-square me-1"></i>
